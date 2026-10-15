@@ -4,7 +4,7 @@ Website: https://against-wu.github.io/video-comparison/
 
 This page contains only two sections:
 
-- Side-by-side video comparisons, with 2–4 methods per case, group playback, shared seeking and 1×/2×/4×/8× speed controls.
+- Side-by-side video comparisons, with no upper limit on methods per case, group playback, shared seeking and 1×/2×/4×/8× speed controls.
 - VBench-Long metric comparison, with seven core quality dimensions, all sixteen dimensions and three optional aggregate score fields.
 
 The initial videos are labeled animated placeholders. Method A and Method B are placeholder labels. Scores are intentionally empty; no evaluation results are invented.
@@ -13,7 +13,8 @@ The initial videos are labeled animated placeholders. Method A and Method B are 
 
 Open https://against-wu.github.io/video-comparison/?edit=1
 
-- Click 编辑视频 to choose videos or enter video URLs.
+- Video cases use one State-of-the-Art section. Existing cases from other categories are merged into it.
+- Click 编辑视频 to choose videos or enter video URLs. Click 添加对比方法 to add as many methods as needed; videos wrap to keep each player readable.
 - Click 编辑指标 to add method names, scores and evaluation settings.
 - Scores use the 0–100 percentage scale. Empty cells remain unreported. Total, Quality and Semantic scores must come from your evaluation results and are not calculated by the page.
 - Metric CSV files can be exported, edited and imported. Keep the exported column names and percentage scale.
