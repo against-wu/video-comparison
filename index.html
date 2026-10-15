@@ -1,5 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Side-by-side video comparisons and editable VBench-Long benchmark results."><meta name="theme-color" content="#315ee9"><title>Video Comparison — Video &amp; VBench-Long</title><style>
+<html lang="en"><style data-id="samantha-vocabruary-style">doubao-vocabulary-highlight {
+  background-color: rgba(251, 255, 20, 0.44);
+  visibility: visible !important;
+}
+doubao-vocabulary-highlight:hover {
+  background-color: rgba(251, 255, 30, 0.44);
+}
+</style><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Side-by-side video comparisons and editable VBench-Long benchmark results."><meta name="theme-color" content="#315ee9"><title>Video Comparison — Video &amp; VBench-Long</title><style>
     :root{--ink:#202735;--muted:#697386;--blue:#315ee9;--pale:#f1f5ff;--line:#e4e8ef;--white:#fff;--radius:12px;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}
     *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;background:#fff}button,input,textarea,select{font:inherit}button,a,input,textarea,select{outline-offset:4px}button{cursor:pointer}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}button{border:0}button:disabled{cursor:default;opacity:.55}svg{display:block}::selection{background:#dce5ff}.wrap{width:min(1100px,calc(100% - 64px));margin:auto}.skip{position:fixed;top:-60px;background:#fff;padding:10px;z-index:100}.skip:focus{top:10px}
     .nav{height:72px;position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav .wrap{height:100%;display:flex;align-items:center;gap:24px}.brand{font-size:17px;color:var(--ink);font-weight:750;display:flex;gap:10px;align-items:center;white-space:nowrap;max-width:250px;overflow:hidden;text-overflow:ellipsis}.brand-mark{width:26px;height:26px;display:grid;place-items:center;border:1px solid #ccd6f8;border-radius:7px;background:var(--pale);color:var(--blue);flex-shrink:0}.nav-links{display:flex;gap:2px;margin-left:auto}.nav-links a{padding:7px 12px;color:var(--muted);font-size:13px;border-radius:6px;white-space:nowrap}.nav-links a.active{color:var(--blue);background:var(--pale)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;line-height:1.4;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);font-size:13px;padding:9px 14px;font-weight:600;white-space:nowrap}.btn:hover{background:#f4f6fa;text-decoration:none}.btn svg{width:15px;height:15px}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.primary:hover{background:#244dcd}.btn.dark{background:#293140;border-color:#293140;color:#fff;padding:12px 22px;border-radius:30px;min-width:116px}.btn.ghost{border-color:transparent;background:transparent}.edit-trigger{font-size:12px;padding:8px 11px}.mobile-menu{display:none}
@@ -23,25 +30,24 @@
 
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
-<header class="nav"><div class="wrap"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">↔</span><span id="brand-name">Video Comparison</span></a><nav class="nav-links" aria-label="Page sections"><a href="#videos" class="active">Videos</a><a href="#benchmarks">VBench-Long</a></nav><button class="btn edit-trigger edit-basic owner-only" hidden>✎ 页面设置</button><button class="btn mobile-menu" aria-expanded="false" aria-label="Toggle navigation">☰</button></div></header>
+<header class="nav"><div class="wrap"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">↔</span><span id="brand-name">Video Comparison</span></a><nav class="nav-links" aria-label="Page sections"><a href="#videos" class="">Videos</a><a href="#benchmarks" class="active">VBench-Long</a></nav><button class="btn edit-trigger edit-basic owner-only" hidden="">✎ 页面设置</button><button class="btn mobile-menu" aria-expanded="false" aria-label="Toggle navigation">☰</button></div></header>
 <div class="hero"><div class="wrap"><div class="eyebrow"><span class="dot"></span>VIDEO GENERATION / METHOD COMPARISON</div><h1 id="project-name">Video Comparison</h1><div class="hero-bottom"><p class="intro-copy" id="project-subtitle">Compare different methods, in motion and in numbers.</p><div class="hero-pills"><a href="#videos"><b>01</b> Video comparisons</a><a href="#benchmarks"><b>02</b> VBench-Long</a></div></div></div></div>
 <main id="main" class="wrap">  <section id="videos"><div class="section-heading"><h2>Video Comparison</h2><span class="section-number">01 / VIDEOS</span></div><p class="section-lead">Same prompt. Side by side. Explore the difference over time.</p>
-    <div class="tabs" role="tablist" aria-label="Video comparison categories" id="category-tabs"></div><div id="comparisons" role="tabpanel" tabindex="0"></div>
-    <button class="btn add-case owner-only" hidden id="add-case">＋ 添加视频对比案例</button><div class="video-help owner-only" hidden>ⓘ 动态插画仅演示播放控件，并非模型生成结果。<a href="#videos" id="upload-help">添加你的视频 →</a></div>
+    <div class="tabs" role="tablist" aria-label="Video comparison categories" id="category-tabs"></div><div id="comparisons" role="tabpanel" tabindex="0" aria-labelledby="tab-sota"></div>
+    <button class="btn add-case owner-only" id="add-case" hidden="">＋ 添加视频对比案例</button><div class="video-help owner-only" hidden="">ⓘ 动态插画仅演示播放控件，并非模型生成结果。<a href="#videos" id="upload-help">添加你的视频 →</a></div>
   </section>
 <section id="benchmarks"><div class="section-top"><div><div class="section-heading"><h2>VBench-Long</h2><span class="section-number">02 / METRICS</span></div><p class="section-lead">A quantitative comparison of video generation methods.</p></div><span class="benchmark-title-count" id="method-count">2 methods</span></div>
-<div class="benchmark-actions"><div class="metric-views" id="metric-views" aria-label="Metric views"></div><button class="btn" id="export-csv">↓ Export CSV</button><label class="btn csv-label owner-only" hidden>↑ 导入 CSV<input type="file" id="import-csv" accept=".csv,text/csv" aria-label="导入指标 CSV"></label><button class="btn primary edit-metrics owner-only" hidden>✎ 编辑指标</button></div>
+<div class="benchmark-actions"><div class="metric-views" id="metric-views" aria-label="Metric views"><button class="metric-view active" aria-pressed="true" data-view="core">Core metrics · 7</button><button class="metric-view " aria-pressed="false" data-view="summary">Summary · 3</button><button class="metric-view " aria-pressed="false" data-view="all">All metrics · 19</button></div><button class="btn" id="export-csv">↓ Export CSV</button><label class="btn csv-label owner-only" hidden="">↑ 导入 CSV<input type="file" id="import-csv" accept=".csv,text/csv" aria-label="导入指标 CSV"></label><button class="btn primary edit-metrics owner-only" hidden="">✎ 编辑指标</button></div>
 <p class="metric-status" id="metric-status">No evaluation scores added yet. — denotes an unreported result.</p><div class="table-wrap" tabindex="0" role="region" aria-label="VBench-Long scores, scroll horizontally for more metrics"><table class="metric-table" id="metrics-table"></table></div>
 <div class="metric-notes"><div><span class="best-key"></span>Best per column · Scores (%) ↑ · — Not reported</div><div class="metric-source">Metric definitions: <a href="https://github.com/Vchitect/VBench/tree/master/vbench2_beta_long" target="_blank" rel="noopener noreferrer">VBench-Long ↗</a></div></div><p class="metric-settings" id="metric-settings">Evaluation settings have not been specified.</p>
 </section></main>
 <footer class="wrap footer"><span>Video comparisons &amp; VBench-Long evaluation</span><a href="#top">Back to top ↑</a></footer>
-<div class="owner-bar owner-only" hidden><button class="btn edit-basic">✎ 页面设置</button><button class="btn edit-metrics">✎ 编辑指标</button><button class="btn primary" id="export-page">↓ 导出 GitHub 网页</button></div><div id="toast" class="toast" role="status" hidden></div>
-<dialog id="basic-dialog" class="page-basics"><form id="basic-form"><div class="dialog-head"><h2>页面设置</h2><button type="button" class="close" data-close aria-label="关闭">×</button></div><div class="dialog-body"><label class="field">网页标题<input id="page-name-input" required maxlength="120"></label><label class="field">简短描述<input id="page-subtitle-input" maxlength="240"></label></div><div class="dialog-actions"><button type="button" class="btn" data-close>取消</button><button type="submit" class="btn primary">保存设置</button></div></form></dialog>
-<dialog id="metrics-dialog" class="metric-dialog"><form id="metric-form"><div class="dialog-head"><h2>编辑 VBench-Long 指标</h2><button type="button" class="close" data-close aria-label="关闭">×</button></div><div class="dialog-body"><p>填写同一评测设置下的结果。分数使用 0–100 百分制；留空表示未填写。汇总分请填入评测结果，不会自动计算。</p><label class="field">评测设置说明<textarea id="benchmark-settings-input" rows="2" placeholder="例如：视频时长、分辨率、帧率、提示词集、评测版本……"></textarea></label><div class="metric-editor-views" id="metric-editor-views"></div><div class="table-wrap metric-editor" tabindex="0" role="region" aria-label="指标编辑表格"><table class="metric-table" id="metric-editor-table"></table></div><div class="metrics-dialog-tools"><button type="button" class="btn" id="add-metric-method">＋ 添加方法</button><button type="button" class="btn" id="use-video-methods">从视频方法添加</button></div><p class="metric-form-note">完整评测包含 16 个维度；另提供 Total / Quality / Semantic 三项汇总分字段。表格仅展示你填写或导入的数据。</p></div><div class="dialog-actions"><button type="button" class="btn" data-close>取消</button><button type="submit" class="btn primary">保存指标</button></div></form></dialog>
-<dialog id="clip-dialog"><form id="clip-form"><div class="dialog-head"><h2>编辑视频对比</h2><button type="button" class="close" data-close aria-label="关闭">×</button></div><div class="dialog-body"><label class="field">案例名称<input name="caseTitle" required maxlength="160"></label><label class="field">Prompt / 场景描述<textarea name="casePrompt" rows="3"></textarea></label><div id="clip-fields"></div><button class="btn" type="button" id="add-method">＋ 添加对比方法</button><p class="hint" style="margin-top:16px">支持 MP4 / WebM 链接或本地视频。本地文件只在浏览器中预览和保存，导出 ZIP 时会一并打包；不会自动上传。建议使用 H.264 编码的 MP4。</p></div><div class="dialog-actions"><button type="button" class="danger" id="delete-case" style="margin-right:auto">移除此案例</button><button type="button" class="btn" data-close>取消</button><button type="submit" class="btn primary">保存视频</button></div></form></dialog>
-<dialog id="export-dialog"><div class="dialog-head"><h2>导出 GitHub Pages 网页</h2><button class="close" data-close aria-label="关闭">×</button></div><div class="dialog-body"><p>将下载一个 ZIP，包含页面与已添加的本地视频。解压后，把其中全部文件上传到 GitHub 仓库即可。</p><div class="hint">1. 解压 ZIP，将 index.html 和 media 文件夹放在仓库根目录。<br>2. 在仓库 Settings → Pages 中选择从分支发布：main / root。<br>3. 等待 GitHub 完成发布，访问生成的网页地址。<br><br>导出页默认隐藏编辑按钮；在网址后加 ?edit=1 可继续编辑。编辑不自动更新线上页面，需要重新导出并上传。</div><p id="export-summary" style="margin-top:16px"></p></div><div class="dialog-actions"><button class="btn" data-close>取消</button><button class="btn primary" id="download-zip">↓ 下载网页 ZIP</button></div></dialog>
-<script id="site-config" type="application/json">
-{
+<div class="owner-bar owner-only" hidden=""><button class="btn edit-basic">✎ 页面设置</button><button class="btn edit-metrics">✎ 编辑指标</button><button class="btn primary" id="export-page">↓ 导出 GitHub 网页</button></div><div id="toast" class="toast" role="status" hidden="">视频对比已保存。</div>
+<dialog id="basic-dialog" class="page-basics"><form id="basic-form"><div class="dialog-head"><h2>页面设置</h2><button type="button" class="close" data-close="" aria-label="关闭">×</button></div><div class="dialog-body"><label class="field">网页标题<input id="page-name-input" required="" maxlength="120"></label><label class="field">简短描述<input id="page-subtitle-input" maxlength="240"></label></div><div class="dialog-actions"><button type="button" class="btn" data-close="">取消</button><button type="submit" class="btn primary">保存设置</button></div></form></dialog>
+<dialog id="metrics-dialog" class="metric-dialog"><form id="metric-form"><div class="dialog-head"><h2>编辑 VBench-Long 指标</h2><button type="button" class="close" data-close="" aria-label="关闭">×</button></div><div class="dialog-body"><p>填写同一评测设置下的结果。分数使用 0–100 百分制；留空表示未填写。汇总分请填入评测结果，不会自动计算。</p><label class="field">评测设置说明<textarea id="benchmark-settings-input" rows="2" placeholder="例如：视频时长、分辨率、帧率、提示词集、评测版本……"></textarea></label><div class="metric-editor-views" id="metric-editor-views"></div><div class="table-wrap metric-editor" tabindex="0" role="region" aria-label="指标编辑表格"><table class="metric-table" id="metric-editor-table"></table></div><div class="metrics-dialog-tools"><button type="button" class="btn" id="add-metric-method">＋ 添加方法</button><button type="button" class="btn" id="use-video-methods">从视频方法添加</button></div><p class="metric-form-note">完整评测包含 16 个维度；另提供 Total / Quality / Semantic 三项汇总分字段。表格仅展示你填写或导入的数据。</p></div><div class="dialog-actions"><button type="button" class="btn" data-close="">取消</button><button type="submit" class="btn primary">保存指标</button></div></form></dialog>
+<dialog id="clip-dialog"><form id="clip-form"><div class="dialog-head"><h2>编辑视频对比</h2><button type="button" class="close" data-close="" aria-label="关闭">×</button></div><div class="dialog-body"><label class="field">案例名称<input name="caseTitle" required="" maxlength="160"></label><label class="field">Prompt / 场景描述<textarea name="casePrompt" rows="3"></textarea></label><div id="clip-fields"><div class="clip-editor"><div class="clip-heading"><strong>对比方法 1</strong><button type="button" class="danger remove-clip" data-index="0">移除</button></div><label class="field">方法名称<input name="clip-label-0" value="Relax Forcing"></label><label class="field">视频链接 / 文件路径<input name="clip-src-0" value="media/clip-c.mp4"><small>填写 MP4 / WebM 直链，或选择下方本地视频。</small></label><div class="clip-file"><label class="btn file-pick">↑ 选择本地视频<input type="file" accept="video/mp4,video/webm,video/quicktime" data-file-index="0" aria-label="选择方法 1 的本地视频"></label><span class="file-status">demo_stop_sign.mp4</span></div></div><div class="clip-editor"><div class="clip-heading"><strong>对比方法 2</strong><button type="button" class="danger remove-clip" data-index="1">移除</button></div><label class="field">方法名称<input name="clip-label-1" value="Method B"></label><label class="field">视频链接 / 文件路径<input name="clip-src-1" value=""><small>填写 MP4 / WebM 直链，或选择下方本地视频。</small></label><div class="clip-file"><label class="btn file-pick">↑ 选择本地视频<input type="file" accept="video/mp4,video/webm,video/quicktime" data-file-index="1" aria-label="选择方法 2 的本地视频"></label><span class="file-status">尚未选择本地文件</span></div></div><div class="clip-editor"><div class="clip-heading"><strong>对比方法 3</strong><button type="button" class="danger remove-clip" data-index="2">移除</button></div><label class="field">方法名称<input name="clip-label-2" value="Method 3"></label><label class="field">视频链接 / 文件路径<input name="clip-src-2" value=""><small>填写 MP4 / WebM 直链，或选择下方本地视频。</small></label><div class="clip-file"><label class="btn file-pick">↑ 选择本地视频<input type="file" accept="video/mp4,video/webm,video/quicktime" data-file-index="2" aria-label="选择方法 3 的本地视频"></label><span class="file-status">尚未选择本地文件</span></div></div></div><button class="btn" type="button" id="add-method">＋ 添加对比方法</button><p class="hint" style="margin-top:16px">支持 MP4 / WebM 链接或本地视频。本地文件只在浏览器中预览和保存，导出 ZIP 时会一并打包；不会自动上传。建议使用 H.264 编码的 MP4。</p></div><div class="dialog-actions"><button type="button" class="danger" id="delete-case" style="margin-right:auto">移除此案例</button><button type="button" class="btn" data-close="">取消</button><button type="submit" class="btn primary">保存视频</button></div></form></dialog>
+<dialog id="export-dialog"><div class="dialog-head"><h2>导出 GitHub Pages 网页</h2><button class="close" data-close="" aria-label="关闭">×</button></div><div class="dialog-body"><p>将下载一个 ZIP，包含页面与已添加的本地视频。解压后，把其中全部文件上传到 GitHub 仓库即可。</p><div class="hint">1. 解压 ZIP，将 index.html 和 media 文件夹放在仓库根目录。<br>2. 在仓库 Settings → Pages 中选择从分支发布：main / root。<br>3. 等待 GitHub 完成发布，访问生成的网页地址。<br><br>导出页默认隐藏编辑按钮；在网址后加 ?edit=1 可继续编辑。编辑不自动更新线上页面，需要重新导出并上传。</div><p id="export-summary" style="margin-top:16px">包含 2 组视频对比、2 个方法的指标记录，以及 7 个本地视频（23.1 MB）。</p></div><div class="dialog-actions"><button class="btn" data-close="">取消</button><button class="btn primary" id="download-zip" disabled="">正在打包…</button></div></dialog>
+<script id="site-config" type="application/json">{
   "version": 2,
   "editable": false,
   "name": "Video Comparison",
@@ -55,20 +61,40 @@
   "groups": [
     {
       "id": "case-orbit",
-      "title": "A journey beyond the horizon",
+      "title": "A 3D model of a 1800s victorian house",
       "category": "sota",
-      "prompt": "An illustrated spacecraft drifts above a quiet planet. A shared prompt and aligned playback make it easier to compare the same scene across methods.",
+      "prompt": "A detailed 3D model of a grand Victorian house from the 1800s, showcasing intricate architectural details such as ornate railings, multiple gables, and large bay windows. The house is painted in classic muted tones with a white trim, and surrounded by a well-manicured lawn and flower beds. The exterior features include a wrap-around porch with elegant columns and hanging lanterns. The scene captures the essence of late 19th-century elegance, with a serene and picturesque atmosphere. Wide shot, static scene.",
       "scene": "space",
       "clips": [
         {
           "id": "clip-a",
-          "label": "Method A",
-          "src": ""
+          "label": "deep forcing",
+          "src": "media/clip-a.mp4"
         },
         {
           "id": "clip-b",
-          "label": "Method B",
-          "src": ""
+          "label": "relax forcing",
+          "src": "media/clip-b.mp4"
+        },
+        {
+          "id": "clip-c099fc12-ca4c-489c-9670-f4b69ef7949a",
+          "label": "infinity rope",
+          "src": "media/clip-c099fc12-ca4c-489c-9670-f4b69ef7949a.mp4"
+        },
+        {
+          "id": "clip-36415d84-9365-4a47-b8ac-b894b211f1eb",
+          "label": "attention sink SF",
+          "src": "media/clip-36415d84-9365-4a47-b8ac-b894b211f1eb.mp4"
+        },
+        {
+          "id": "clip-9ca58947-42fa-42f3-96c3-0212acb2979f",
+          "label": "self forcing",
+          "src": "media/clip-9ca58947-42fa-42f3-96c3-0212acb2979f.mp4"
+        },
+        {
+          "id": "clip-b7940902-e456-4e02-8591-bd07a981ae59",
+          "label": "rolling forcing",
+          "src": "media/clip-b7940902-e456-4e02-8591-bd07a981ae59.mp4"
         }
       ]
     },
@@ -81,12 +107,17 @@
       "clips": [
         {
           "id": "clip-c",
-          "label": "Method A",
-          "src": ""
+          "label": "Relax Forcing",
+          "src": "media/clip-c.mp4"
         },
         {
           "id": "clip-d",
           "label": "Method B",
+          "src": ""
+        },
+        {
+          "id": "clip-09d0d391-a26d-4134-abd3-1b5689286fe8",
+          "label": "Method 3",
           "src": ""
         }
       ]
@@ -107,8 +138,7 @@
       }
     ]
   }
-}
-</script>
+}</script>
 <script id="app-script">
 (() => {
   'use strict';
@@ -322,5 +352,6 @@ function toCsv(rows) {
   init();
 })();
 </script>
-</body></html>
 
+
+<doubao-ai-csui id="633a346af40a4b3ca3ac022ad2a89eca" data-host-id="fc8da279-aded-4e89-99d2-721b5aa4f5cc"></doubao-ai-csui><div id="doubao-ai-translate-image-assistantfc8da279-aded-4e89-99d2-721b5aa4f5cc" data-collection-img-host-id="fc8da279-aded-4e89-99d2-721b5aa4f5cc"></div><div style="width: 0px; height: 0px; position: absolute; z-index: 200000;"></div><div id="doubao-ai-assistant" aria-label="flow-ai-assistant" class="flow-ai-select-bar-enabled flow-ai-select-bar-support-iframe" aria-description="flow-ai-select-bar-enabled flow-ai-select-bar-support-iframe" style="width: 0px; height: 0px; position: absolute; top: 0px; left: 0px; overflow: hidden;"></div><qk-ai-extension></qk-ai-extension></body><doubao-ai-vocabruary-popup-card></doubao-ai-vocabruary-popup-card></html>
